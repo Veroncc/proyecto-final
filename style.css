@@ -1,10 +1,9 @@
 body{
     background-color: rgba(233, 150, 122, 0.784);
-    
 }
 
 .banner{
-    background-image: url(img/Fondo.jpg);
+    background-image: url(img/.jpg);
     display: flex;
     width: 99%;
     height: 60vh;
