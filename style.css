@@ -119,7 +119,24 @@ img{
 }
 
 .un{
-    color: rgba(255, 147, 108, 0.842);
+    color: rgba(208, 106, 68, 0.842);
+}
+
+section {
+    text-align: center;
+    padding: 20px;
+}
+
+section img {
+    width: 100%; /* O ajusta el tamaño según tus necesidades */
+    max-width: 400px; /* Máximo ancho para evitar imágenes demasiado grandes */
+    margin: 10px; /* Espaciado entre las imágenes */
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .section{
