@@ -1,0 +1,225 @@
+body{
+    background-color: rgba(233, 150, 122, 0.784);
+    
+}
+
+.banner{
+    background-image: url(img/Fondo.jpg);
+    display: flex;
+    width: 99%;
+    height: 60vh;
+    background-repeat: no-repeat;
+    background-size: 99% 100%;
+    background-attachment: fixed;
+    padding: 15px;
+}
+
+li{
+    padding: 5px;
+}
+
+span{
+    color: rgba(208, 117, 169, 0.826);
+}
+
+.contenedor{
+    margin: 5px 800px;
+}
+
+.contenedorb{
+    color:azure;
+    padding-top: 60px;
+}
+
+.contenedorb span{
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.contenedorb span{
+    margin-bottom: 10px;
+    font-size: 60px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.contenedorb p{
+    margin-bottom: 40px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.contenedorb a{
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.contenedorb .link{
+    padding: 10px 30px;
+    background-color: rgba(245, 245, 220, 0.756);
+    border: 1px solid black;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 10px;
+    color:brown
+}
+
+.contenedorb .link1{
+    padding: 10px 30px;
+    background-color: rgba(245, 245, 220, 0.756);
+    border: 1px solid black;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 10px;
+    color:brown
+}
+
+.contenedorb .link2{
+    padding: 10px 30px;
+    background-color: rgba(245, 245, 220, 0.756);
+    border: 1px solid black;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 10px;
+    color:brown
+}
+
+.contenedorb .link:hover{
+    background-color:rgb(178, 142, 0); 
+    border: 5px solid rgb(182, 113, 49);
+    color: rgb(248, 193, 54);
+}
+
+.contenedorb .link1:hover{
+    background-color:rgb(178, 142, 0); 
+    border: 5px solid rgb(182, 113, 49);
+    color: rgb(248, 193, 54);
+}
+
+.contenedorb .link2:hover{
+    background-color:rgb(178, 142, 0); 
+    border: 5px solid rgb(182, 113, 49);
+    color: rgb(248, 193, 54);
+}
+
+ul{
+    line-height: 250%;
+}
+
+img{
+    height: 20%;
+    width: 60%;
+}
+
+.elemento{
+    display: inline-block;
+    width: 25%;
+}
+
+.un{
+    color: rgba(255, 147, 108, 0.842);
+}
+
+.section{
+    margin-top: 5px;
+    margin-left: 2%;
+    text-align: center;
+    width: 99%;
+}
+
+.section1{
+    margin-top: 10px;
+    margin-left: 2%;
+    text-align: center;
+    width: 99%;
+}
+
+.text{
+    display: inline-block;
+    width: 20%;
+    height: 25%;
+    margin: 15px;
+}
+
+.contener{
+    padding-top: 15px;
+    width: 100%;
+}
+
+.contenedora{
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    height: 65px;
+    padding: 10px 0;
+}
+   
+nav ul {
+    list-style-type: none;
+    padding: 20px 0;
+    text-align: center;
+}
+   
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+   
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+}
+   
+nav ul li a:hover {
+    color: #555;
+}
+   
+#servicios {
+    padding: 20px 0;
+}
+   
+#servicios ul li h3 {
+    margin-bottom: 10px;
+}
+
+#reseñas {
+    padding: 20px 0;
+}
+   
+#reseñas blockquote {
+    background-color: #c34848e9;
+    border-left: 10px solid #ccc;
+    margin: 0;
+    padding: 20px;
+}
+   
+#reseñas blockquote p {
+    margin: 0;
+}
+   
+#reseñas blockquote footer {
+    background-color: #ab6868;
+    color: #333;
+    padding: 10px 20px;
+    text-align: right;
+}
+
+#reseñas footer blockquote {
+    text-align: center;
+    color: #777;
+    padding: 20px 0;
+    margin: 0;
+}
+   
+#reseñas footer blockquote p {
+    margin: 0;
+    padding: 0 20px;
+}
