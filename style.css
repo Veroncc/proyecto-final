@@ -2,6 +2,51 @@ body{
     background-color: rgba(233, 150, 122, 0.784);
 }
 
+header {
+    background-color: #715d5d;
+    color: #ffffff;
+    padding: 10px 0;
+}
+
+#ul{
+    text-decoration: underline rgb(44, 40, 40);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav button {
+    background-color: #692a2a;
+    color: #d6b9b9;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+    background-color: #e50086; /* Cambia el color al pasar el ratón */
+}
+
+ul li a{
+    padding: 15px;
+}
+
 .banner{
     background-image: url(img/banner.png);
     display: flex;
@@ -150,7 +195,7 @@ section {
 
 section img {
     width: 100%;
-    max-width:550px;
+    max-width: 500px;
     margin: 10px; /* Espaciado entre las imágenes */
 }
 
@@ -253,25 +298,27 @@ nav ul li a:hover {
     color: #555;
 }
 
-#reseñas {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: rgb(163, 116, 162),
+#reseña {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
 }
 
 .resena {
-    border: 1px solid #ddd;
+    background-color: #775959;
     padding: 15px;
-    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .resena p {
     font-size: 16px;
     line-height: 1.6;
-    margin-bottom: 10px;
+    color: #d1d1d1;
 }
 
 .nombre-cliente {
+    margin-top: 10px;
     font-weight: bold;
-    color: #333;
+    color: #007bff;
 }
