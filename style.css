@@ -3,10 +3,10 @@ body{
 }
 
 .banner{
-    background-image: url(img/.jpg);
+    background-image: url(img/banner.png);
     display: flex;
     width: 99%;
-    height: 60vh;
+    height: 70vh;
     background-repeat: no-repeat;
     background-size: 99% 100%;
     background-attachment: fixed;
@@ -18,7 +18,9 @@ li{
 }
 
 span{
-    color: rgba(208, 117, 169, 0.826);
+    color: rgba(65, 48, 95, 0.948);
+    background-color: rgba(240, 248, 255, 0.67);
+    padding: 15px;
 }
 
 .contenedor{
@@ -87,21 +89,21 @@ span{
 }
 
 .contenedorb .link:hover{
-    background-color:rgb(178, 142, 0); 
-    border: 5px solid rgb(182, 113, 49);
-    color: rgb(248, 193, 54);
+    background-color:rgba(98, 36, 51, 0.593); 
+    border: 5px solid rgb(136, 67, 120);
+    color: rgb(0, 0, 0);
 }
 
 .contenedorb .link1:hover{
-    background-color:rgb(178, 142, 0); 
-    border: 5px solid rgb(182, 113, 49);
-    color: rgb(248, 193, 54);
+    background-color:rgba(98, 36, 51, 0.593); 
+    border: 5px solid rgb(136, 67, 120);
+    color: rgb(0, 0, 0);
 }
 
 .contenedorb .link2:hover{
-    background-color:rgb(178, 142, 0); 
-    border: 5px solid rgb(182, 113, 49);
-    color: rgb(248, 193, 54);
+    background-color:rgba(98, 36, 51, 0.593); 
+    border: 5px solid rgb(136, 67, 120);
+    color: rgb(0, 0, 0);
 }
 
 ul{
@@ -119,17 +121,36 @@ img{
 }
 
 .un{
-    color: rgba(208, 106, 68, 0.842);
+    color: rgba(45, 45, 51, 0.842);
+}
+
+#titulo{
+    background-color: rgba(240, 248, 255, 0.67);
+    padding: 10px;
+}
+
+#subinfo{
+    background-color: rgba(240, 248, 255, 0.67);
+    padding: 5px;
 }
 
 section {
     text-align: center;
     padding: 20px;
+    margin: 15px;
+}
+
+#empresa p{
+    color: #333;
+}
+
+#empresa_{
+    background-color: #b06c6c;
 }
 
 section img {
-    width: 100%; /* O ajusta el tamaño según tus necesidades */
-    max-width: 400px; /* Máximo ancho para evitar imágenes demasiado grandes */
+    width: 100%;
+    max-width:550px;
     margin: 10px; /* Espaciado entre las imágenes */
 }
 
@@ -199,7 +220,7 @@ nav ul li a:hover {
 }
 
 #servicios {
-    background-color: #f9f9f9;
+    background-color: #b06c6c;
     padding: 20px;
     text-align: center;
 }
@@ -222,7 +243,7 @@ nav ul li a:hover {
 }
 
 #servicios h3 {
-    color: #007bff;
+    color: #614f17;
     margin-bottom: 10px;
 }
 
@@ -232,10 +253,10 @@ nav ul li a:hover {
     color: #555;
 }
 
-#resenas {
+#reseñas {
     margin-top: 20px;
     padding: 20px;
-    background-color: #f8f8f8;
+    background-color: rgb(163, 116, 162),
 }
 
 .resena {

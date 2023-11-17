@@ -14,12 +14,11 @@
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#empresa">Empresa</a></li>
                     <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#reseñas">Reseñas</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#reseña">Reseñas</a></li>
+                    <li><a href="#redes">Redes Sociales</a></li>
                     <!-- Agrega los botones de inicio de sesión y cerrar sesión -->
                     <li> <button onclick="iniciarSesion()"> Iniciar Sesión </button> </li>
                     <li> <button onclick="cerrarSesion()"> Cerrar Sesión </button> </li>
-           </ul>
                </ul>
             </nav>
          </header>
@@ -27,18 +26,19 @@
             <div class="contenedor"> 
                 <div class="contenedorb">
                     <span> BIENVENIDOS </span>
-                    <h1 class="un"> BOUTIQUE </h1>
-                    <p class="un"> Encuentra aqui todo lo que te podemos ofrecer </p>
+                    <h1 class="un" id="titulo"> ARBOL BOUTIQUE </h1>
+                    <p class="un" id="subinfo"> Encuentra aqui todo lo que te podemos ofrecer </p>
                     <ul>
-                        <li> <a href="#maquillaje" class="link" class="line"> Servicios </a> </li>
-                        <li> <a href="#facial" class="link1" class="line"> Cuidado Facial </a> </li>
-                        <li> <a href="#tratamiento" class="link2" class="line"> Tratamiento </a> </li>
+                        <li> <a href="#empresa" class="link" class="line"> Nuestra empresa </a> </li>
+                        <li> <a href="#servicios" class="link" class="line"> Servicios </a> </li>
+                        <li> <a href="#reseña" class="link1" class="line"> Reseñas </a> </li>
+                        <li> <a href="#redes" class="link2" class="line"> Redes sociales </a> </li>
                     </ul>
                 </div>
             </div>
         </div>
-        <section>
-            <p id="empresa">Nuestra empresa</p>
+        <section id="empresa_">
+            <p id="empresa"> Nuestra empresa</p>
             <div class="flex-container">
                 <img src="img/empresa 2.jpg">
                 <img src="img/empresa1.jpg">
@@ -74,36 +74,7 @@
                </li>
                </ul>
            </section>
-        <section id="servicios">
-            <h2>Nuestros servicios</h2>
-            <ul>
-               <li>
-                  <h3> Venta al por Mayor </h3>
-                  <p> Suministro de ropa a otras tiendas minoristas o boutiques. </p>
-               </li>
-              <li>
-                  <h3> Venta al por Menor </h3>
-                  <p> Venta directa de ropa y accesorios al consumidor final a través de tiendas físicas o en línea. </p>
-               </li>
-               <li>
-                  <h3> Ropa Deportiva </h3>
-                  <p> Diseño y fabricación de ropa deportiva y activewear. </p>
-               </li>
-               <li>
-                  <h3> Ropa Sostenible </h3>
-                  <p> Compromiso con la moda sostenible, utilizando materiales ecológicos y procesos de fabricación respetuosos con el medio ambiente. </p>
-               </li>
-               <li>
-                  <h3> Colecciones </h3>
-                  <p> Lanzamiento de colecciones de edición limitada para crear interés y exclusividad. </p>
-               </li>
-               <li>
-                  <h3> Membresías </h3>
-                  <p> Ofrecer programas de membresía con descuentos exclusivos y ventajas para clientes frecuentes. </p>
-               </li>
-               </ul>
-        </section>
-        <section id="resenas">
+        <section id="reseña">
             <h2>Reseñas de Clientes</h2>
         
             <div class="resena">
@@ -132,7 +103,7 @@
             </div>
         </section>
         <footer>
-         <blockquote>
+         <blockquote id="redes">
              <p>Este es el pie de página del sitio web, donde se puede agregar información adicional.</p>
          </blockquote>
      </footer>   
