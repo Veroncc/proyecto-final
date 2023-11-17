@@ -1,24 +1,124 @@
-<!-- Agrega este contenido a una nueva página llamada login.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="stylelogin.css">
+    <link rel="stylesheet" href="index.html">
+    <title>Registro e Inicio de Sesión</title>
 </head>
 <body>
+
+<!-- Página de Registro -->
+<div id="registro">
+    <h2>Registro</h2>
+    <form id="registroForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" required>
+
+        <label for="genero">Género:</label>
+        <select id="genero" required>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="otro">Otro</option>
+        </select>
+
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" required>
+
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña" required>
+
+        <button type="button" onclick="registrarUsuario()">Registrarse</button>
+    </form>
+</div>
+
+<!-- Página de Inicio de Sesión -->
+<div id="inicioSesion" style="display: none;">
     <h2>Iniciar Sesión</h2>
-    <form id="formularioInicioSesion">
-        <label for="correoInicio">Correo Electrónico:</label>
+    <form id="inicioSesionForm">
+        <label for="correoInicio">Correo:</label>
         <input type="email" id="correoInicio" required>
 
         <label for="contraseñaInicio">Contraseña:</label>
         <input type="password" id="contraseñaInicio" required>
 
-        <button type="submit">Iniciar Sesión</button>
+        <button type="button" onclick="iniciarSesion()">Iniciar Sesión</button>
     </form>
+</div>
 
-    <script src="main.js"></script>
+<!-- Página de Index -->
+<div id="index" style="display: none;">
+    <h2>Bienvenido</h2>
+    <p id="bienvenidaUsuario"></p>
+    <button onclick="cerrarSesion()">Cerrar Sesión</button>
+</div>
+
+<script>
+    // Verificar si hay un usuario registrado al cargar la página
+    document.addEventListener('DOMContentLoaded', function () {
+        const usuarioAlmacenado = JSON.parse(localStorage.getItem('usuario'));
+        if (usuarioAlmacenado) {
+            // Si hay un usuario registrado, mostrar la página de inicio de sesión
+            mostrarPagina('inicioSesion');
+        }
+    });
+
+    function registrarUsuario() {
+        const nombre = document.getElementById('nombre').value;
+        const apellido = document.getElementById('apellido').value;
+        const genero = document.getElementById('genero').value;
+        const correo = document.getElementById('correo').value;
+        const contraseña = document.getElementById('contraseña').value;
+
+        // Guardar usuario en el LocalStorage
+        localStorage.setItem('usuario', JSON.stringify({ nombre, apellido, genero, correo, contraseña }));
+
+        // Limpiar el formulario
+        document.getElementById('registroForm').reset();
+
+        // Mostrar la página de inicio de sesión
+        mostrarPagina('inicioSesion');
+    }
+
+    function iniciarSesion() {
+        const correo = document.getElementById('correoInicio').value;
+        const contraseña = document.getElementById('contraseñaInicio').value;
+
+        // Obtener usuario almacenado
+        const usuarioAlmacenado = JSON.parse(localStorage.getItem('usuario'));
+
+        // Verificar credenciales
+        if (usuarioAlmacenado && correo === usuarioAlmacenado.correo && contraseña === usuarioAlmacenado.contraseña) {
+            // Mostrar página de inicio con el nombre del usuario
+            document.getElementById('bienvenidaUsuario').textContent = `Bienvenido, ${usuarioAlmacenado.nombre} ${usuarioAlmacenado.apellido}!`;
+            mostrarPagina('index.html');
+        } else {
+            alert('Credenciales incorrectas. Por favor, inténtelo de nuevo.');
+        }
+    }
+
+    function cerrarSesion() {
+        // Eliminar usuario del LocalStorage
+        localStorage.removeItem('usuario');
+
+        // Mostrar página de inicio de sesión
+        mostrarPagina('inicioSesion');
+    }
+
+    function mostrarPagina(pagina) {
+        // Ocultar todas las páginas
+        document.getElementById('registro').style.display = 'none';
+        document.getElementById('inicioSesion').style.display = 'none';
+        document.getElementById('index').style.display = 'none';
+
+        // Mostrar la página especificada
+        document.getElementById(pagina).style.display = 'block';
+    }
+</script>
+
 </body>
 </html>

@@ -180,45 +180,60 @@ nav ul li a {
 nav ul li a:hover {
     color: #555;
 }
-   
+
 #servicios {
-    padding: 20px 0;
+    background-color: #f9f9f9;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr; /* Una sola columna */
+    gap: 20px;
 }
-   
-#servicios ul li h3 {
+
+#servicios h2 {
+    color: #333;
+    text-align: center;
+    grid-column: 1 / -1;
+    margin-bottom: 20px;
+}
+
+#servicios ul {
+    list-style: none;
+    padding: 0;
+}
+
+#servicios li {
+    margin-bottom: 20px;
+}
+
+#servicios h3 {
+    color: #007bff;
     margin-bottom: 10px;
 }
 
-#reseñas {
-    padding: 20px 0;
+#servicios p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
 }
-   
-#reseñas blockquote {
-    background-color: #c34848e9;
-    border-left: 10px solid #ccc;
-    margin: 0;
+#resenas {
+    margin-top: 20px;
     padding: 20px;
-}
-   
-#reseñas blockquote p {
-    margin: 0;
-}
-   
-#reseñas blockquote footer {
-    background-color: #ab6868;
-    color: #333;
-    padding: 10px 20px;
-    text-align: right;
+    background-color: #f8f8f8;
 }
 
-#reseñas footer blockquote {
-    text-align: center;
-    color: #777;
-    padding: 20px 0;
-    margin: 0;
+.resena {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
 }
-   
-#reseñas footer blockquote p {
-    margin: 0;
-    padding: 0 20px;
+
+.resena p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.nombre-cliente {
+    font-weight: bold;
+    color: #333;
 }
