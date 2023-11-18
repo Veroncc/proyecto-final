@@ -189,7 +189,7 @@ section {
 }
 
 #empresa p{
-    color: #333;
+    color: #ff0000;
 }
 
 #empresa_{
@@ -248,6 +248,7 @@ nav ul li a:hover {
     background-color: #b06c6c;
     padding: 20px;
     text-align: center;
+    font-size: 120%;
 }
 
 #servicios h2 {
@@ -320,70 +321,25 @@ footer{
     display: inline-block;
 }
 
-
-@media screen and (max-width: 480px) {
-    header {
-        padding: 10px 0;
-    }
-
-    nav {
-        text-align: center;
-    }
-
-    nav ul {
-        display: block;
-        text-align: center;
-    }
-
-    nav li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    .banner {
-        padding: 30px 0;
-    }
-
-    .contenedorb {
-        text-align: center;
-    }
-
-    .contenedorb span {
-        font-size: 1.5em;
-    }
-
-    .contenedorb h1 {
-        font-size: 2.5em;
-    }
-
-    .contenedorb p {
-        font-size: 1em;
-    }
-
-    .contenedorb ul {
-        text-align: center;
-        padding: 10px 0;
-    }
-
-    .contenedorb ul li {
-        display: block;
-        margin: 5px 0;
-    }
-
-    .contenedorb ul li a {
-        font-size: 1em;
-    }
+#subir{
+    background-color: rgb(245, 215, 170);
+    border-radius: 35px;
+    padding: 15px;
+    width: 5%;
+    font-size: 120%;
+    text-align: center;
+    float: right;
+    margin: 20px;
 }
 
-    .flex-container {
+.pie{
+    display: inline-block;
+}
+
+
+
+@media only screen and (max-width: 480px) {
+    header,nav,ul{
         flex-direction: column;
-        align-items: center;
     }
-
-    .flex-container img {
-        max-width: 100%;
-    }
-
-    #servicios ul {
-        padding-left: 20px;
-    }
+  }

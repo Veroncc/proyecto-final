@@ -1,103 +1,111 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylelogin.css">
     <link rel="stylesheet" href="index.html">
-    <title> Registro e Inicio de Sesión </title>
+    <title>Registro e Inicio de Sesión</title>
 </head>
+
 <body>
 
-<div id="registro">
-    <h2>Registro</h2>
-    <form id="registroForm">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" required>
+    <div id="registro">
+        <h2>Registro</h2>
+        <form id="registroForm">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
 
-        <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" required>
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" required>
 
-        <label for="genero">Género:</label>
-        <select id="genero" required>
-            <option value="masculino">Masculino</option>
-            <option value="femenino">Femenino</option>
-            <option value="otro">Otro</option>
-        </select>
+            <label for="genero">Género:</label>
+            <select id="genero" required>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="otro">Otro</option>
+            </select>
 
-        <label for="correo">Correo:</label>
-        <input type="email" id="correo" required>
+            <label for="correo">Correo:</label>
+            <input type="email" id="correo" required>
 
-        <label for="contraseña">Contraseña:</label>
-        <input type="password" id="contraseña" required>
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" id="contraseña" required>
 
-        <button type="button" onclick="registrarUsuario()">Registrarse</button>
-    </form>
-</div>
+            <button type="button" onclick="registrarUsuario()">Registrarse</button>
+        </form>
+    </div>
 
-<div id="inicioSesion" style="display: none;">
-    <h2>Iniciar Sesión</h2>
-    <form id="inicioSesionForm">
-        <label for="correoInicio">Correo:</label>
-        <input type="email" id="correoInicio" required>
+    <div id="inicioSesion" style="display: none;">
+        <h2>Iniciar Sesión</h2>
+        <form id="inicioSesionForm">
+            <label for="correoInicio">Correo:</label>
+            <input type="email" id="correoInicio" required>
 
-        <label for="contraseñaInicio">Contraseña:</label>
-        <input type="password" id="contraseñaInicio" required>
+            <label for="contraseñaInicio">Contraseña:</label>
+            <input type="password" id="contraseñaInicio" required>
 
-        <button type="button" onclick="iniciarSesion()">Iniciar Sesión</button>
-    </form>
-</div>
+            <button type="button" onclick="iniciarSesion()">Iniciar Sesión</button>
+        </form>
+    </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const usuarioAlmacenado = JSON.parse(localStorage.getItem('usuario'));
-        if (usuarioAlmacenado) {
+    <div id="index" style="display: none;">
+        <h2 id="bienvenidaUsuario"></h2>
+        <button type="button" onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const usuarioAlmacenado = JSON.parse(localStorage.getItem('usuario'));
+            if (usuarioAlmacenado) {
+                document.getElementById('bienvenidaUsuario').textContent = `Bienvenido, ${usuarioAlmacenado.nombre} ${usuarioAlmacenado.apellido}!`;
+                mostrarPagina('index');
+            }
+        });
+
+        function registrarUsuario() {
+            const nombre = document.getElementById('nombre').value;
+            const apellido = document.getElementById('apellido').value;
+            const genero = document.getElementById('genero').value;
+            const correo = document.getElementById('correo').value;
+            const contraseña = document.getElementById('contraseña').value;
+
+            localStorage.setItem('usuario', JSON.stringify({ nombre, apellido, genero, correo, contraseña }));
+
+            document.getElementById('registroForm').reset();
+
+            mostrarPagina('index');
+        }
+
+        function iniciarSesion() {
+            const correo = document.getElementById('correoInicio').value;
+            const contraseña = document.getElementById('contraseñaInicio').value;
+
+            const usuarioAlmacenado = JSON.parse(localStorage.getItem('usuario'));
+
+            if (usuarioAlmacenado && correo === usuarioAlmacenado.correo && contraseña === usuarioAlmacenado.contraseña) {
+                document.getElementById('bienvenidaUsuario').textContent = `Bienvenido, ${usuarioAlmacenado.nombre} ${usuarioAlmacenado.apellido}!`;
+                mostrarPagina('index');
+            } else {
+                alert('Credenciales incorrectas. Por favor, inténtelo de nuevo.');
+            }
+        }
+
+        function cerrarSesion() {
+            localStorage.removeItem('usuario');
             mostrarPagina('inicioSesion');
         }
-    });
 
-    function registrarUsuario() {
-        const nombre = document.getElementById('nombre').value;
-        const apellido = document.getElementById('apellido').value;
-        const genero = document.getElementById('genero').value;
-        const correo = document.getElementById('correo').value;
-        const contraseña = document.getElementById('contraseña').value;
+        function mostrarPagina(pagina) {
+            document.getElementById('registro').style.display = 'none';
+            document.getElementById('inicioSesion').style.display = 'none';
+            document.getElementById('index').style.display = 'none';
 
-        localStorage.setItem('usuario', JSON.stringify({ nombre, apellido, genero, correo, contraseña }));
-
-        document.getElementById('registroForm').reset();
-
-        mostrarPagina('inicioSesion');
-    }
-
-    function iniciarSesion() {
-        const correo = document.getElementById('correoInicio').value;
-        const contraseña = document.getElementById('contraseñaInicio').value;
-
-        const usuarioAlmacenado = JSON.parse(localStorage.getItem('usuario'));
-
-        if (usuarioAlmacenado && correo === usuarioAlmacenado.correo && contraseña === usuarioAlmacenado.contraseña) {
-            document.getElementById('bienvenidaUsuario').textContent = `Bienvenido, ${usuarioAlmacenado.nombre} ${usuarioAlmacenado.apellido}!`;
-            mostrarPagina('index.html');
-        } else {
-            alert('Credenciales incorrectas. Por favor, inténtelo de nuevo.');
+            document.getElementById(pagina).style.display = 'block';
         }
-    }
-
-    function cerrarSesion() {
-        localStorage.removeItem('usuario');
-
-        mostrarPagina('inicioSesion');
-    }
-
-    function mostrarPagina(pagina) {
-        document.getElementById('registro').style.display = 'none';
-        document.getElementById('inicioSesion').style.display = 'none';
-        document.getElementById('index').style.display = 'none';
-
-        document.getElementById(pagina).style.display = 'block';
-    }
-</script>
+    </script>
 
 </body>
+
 </html>
