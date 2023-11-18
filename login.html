@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylelogin.css">
     <link rel="stylesheet" href="index.html">
-    <title>Registro e Inicio de Sesión</title>
+    <title> Registro e Inicio de Sesión </title>
 </head>
 <body>
 
@@ -48,18 +48,10 @@
     </form>
 </div>
 
-<div id="index" style="display: none;">
-    <h2>Bienvenido</h2>
-    <p id="bienvenidaUsuario"></p>
-    <button onclick="cerrarSesion()">Cerrar Sesión</button>
-</div>
-
 <script>
-    // Verificar si hay un usuario registrado al cargar la página
     document.addEventListener('DOMContentLoaded', function () {
         const usuarioAlmacenado = JSON.parse(localStorage.getItem('usuario'));
         if (usuarioAlmacenado) {
-            // Si hay un usuario registrado, mostrar la página de inicio de sesión
             mostrarPagina('inicioSesion');
         }
     });
@@ -71,13 +63,10 @@
         const correo = document.getElementById('correo').value;
         const contraseña = document.getElementById('contraseña').value;
 
-        // Guardar usuario en el LocalStorage
         localStorage.setItem('usuario', JSON.stringify({ nombre, apellido, genero, correo, contraseña }));
 
-        // Limpiar el formulario
         document.getElementById('registroForm').reset();
 
-        // Mostrar la página de inicio de sesión
         mostrarPagina('inicioSesion');
     }
 
@@ -85,12 +74,9 @@
         const correo = document.getElementById('correoInicio').value;
         const contraseña = document.getElementById('contraseñaInicio').value;
 
-        // Obtener usuario almacenado
         const usuarioAlmacenado = JSON.parse(localStorage.getItem('usuario'));
 
-        // Verificar credenciales
         if (usuarioAlmacenado && correo === usuarioAlmacenado.correo && contraseña === usuarioAlmacenado.contraseña) {
-            // Mostrar página de inicio con el nombre del usuario
             document.getElementById('bienvenidaUsuario').textContent = `Bienvenido, ${usuarioAlmacenado.nombre} ${usuarioAlmacenado.apellido}!`;
             mostrarPagina('index.html');
         } else {
@@ -99,20 +85,16 @@
     }
 
     function cerrarSesion() {
-        // Eliminar usuario del LocalStorage
         localStorage.removeItem('usuario');
 
-        // Mostrar página de inicio de sesión
         mostrarPagina('inicioSesion');
     }
 
     function mostrarPagina(pagina) {
-        // Ocultar todas las páginas
         document.getElementById('registro').style.display = 'none';
         document.getElementById('inicioSesion').style.display = 'none';
         document.getElementById('index').style.display = 'none';
 
-        // Mostrar la página especificada
         document.getElementById(pagina).style.display = 'block';
     }
 </script>
